@@ -30,6 +30,7 @@ void decreaseBeatMax(){
 }
 
 void forloop(int  col, int  row){
+  fillRectangle(centerCol-20,centerRow-20, 40, 22, COLOR_BLUE); 
   for(int i = 0; i < 20; i++){
     drawPixel(centerCol+(i*col), centerRow+(i*col), COLOR_PINK);
   }
