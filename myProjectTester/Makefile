@@ -10,7 +10,7 @@ AS              = msp430-elf-as
 
 all: button.elf 
 #additional rules for files
-button.elf: ${COMMON_OBJECTS} main.o buzzerHandle.o wdInterruptHandler.o led.o stateMachine.o switchInterrputHandler.o lcddraw.o lcdutils.o font-11x16.o font-5x7.o ../lib/libTimer.a
+button.elf: ${COMMON_OBJECTS} main.o buzzerHandle.o wdInterruptHandler.o led.o stateMachine.o switchInterrputHandler.o lcddraw.o lcdutils.o switch.o  font-11x16.o font-5x7.o ../lib/libTimer.a
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 button2.elf: ${COMMON_OBJECTS} main.o buzzerHandle.o wdInterruptHandler.o led-s.o stateMachine.o switchInterrputHandler.o lcdutils.o ../lib/libTimer.a
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^

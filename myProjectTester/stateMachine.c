@@ -1,6 +1,4 @@
-#include <msp430.h>
 #include <stdio.h>
-#include "libTimer.h"
 #include "buzzer.h"
 #include "lcdutils.h"
 #include "lcddraw.h"
@@ -30,38 +28,13 @@ void decreaseBeatMax(){
     drawTime();
   }
 }
-#define centerRow (screenHeight/2)
-#define centerCol (screenWidth/2)
-void advanceState2(){
-  fillRectangle(centerCol-20,centerRow-20, 40, 22, COLOR_BLUE); 
-  static char state = 1;
-  switch(state){
-  case 0:
-    for (int i = 0; i<20; i++){
-      drawPixel(centerCol, centerRow-i, COLOR_PINK);
-        }
-    state++;
-    break;
-  case 1:
-    for(int i = 0; i<20; i++){
-      drawPixel(centerCol-i, centerRow-i, COLOR_PINK);
-    }
-    state++;
-    break;
-  case 2:
-    for(int i = 0; i<20; i++){
-      drawPixel(centerCol, centerRow-i, COLOR_PINK);
-    }
-    state++;
-    break;
-  case 3:
-    for(int i = 0; i<20; i++){
-      drawPixel(centerCol+i, centerRow-i, COLOR_PINK);
-    }
-    state=0;
-    break;
+
+void forloop(int  col, int  row){
+  for(int i = 0; i < 20; i++){
+    drawPixel(centerCol+(i*col), centerRow+(i*col), COLOR_PINK);
   }
 }
+
 
 void drawTempo(int tempo){
   char snum[3];

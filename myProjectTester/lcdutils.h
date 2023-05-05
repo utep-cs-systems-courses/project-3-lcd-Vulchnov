@@ -7,6 +7,9 @@
 #ifndef lcdutils_included
 #define lcdutils_included
 
+
+#define centerCol (screenWidth/2)
+#define centerRow (screenHeight/2)
 typedef unsigned char u_char;
 typedef unsigned int u_int;
 
